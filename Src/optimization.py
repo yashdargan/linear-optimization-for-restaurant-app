@@ -8,8 +8,7 @@ def optimization(df):
     total_order = pd.DataFrame(df['order_store'])
     unique_store = store_employee['store_id'].unique()
     df1 = pd.DataFrame(df['data'])
-    unique_shift = pd.DataFrame(['Night-Morning Shift', 'Morning Shift', 'Noon Shift', 'Afternoon Shift', 'Evening Shift', 'Night Shift'])
-    st.write(store_employee, unique_store, total_order, unique_shift)
+    unique_shift = pd.DataFrame(['Night-Morning Shift', 'Morning Shift', 'Noon Shift', 'Afternoon Shift', 'Evening Shift', 'Night Shift']) 
 
     # Model
     model = cp_model.CpModel()
@@ -26,7 +25,7 @@ def optimization(df):
                 'store_id': store_id,
                 'shift': store_shift,
                 'employee_id': employee_id,
-                'busy': False
+                'busy': 'on-shift'
             }
             shifts.append(shift_entry)
 
@@ -42,22 +41,20 @@ def optimization(df):
     
     # Filter the shifts DataFrame for the current store_id and shift
         filtered_shifts = shifts_df[(shifts_df['store_id'] == store_id) & (shifts_df['shift'] == shift)]
-        st.write(filtered_shifts)
     # Find available employees
-        available_employees = filtered_shifts[filtered_shifts['busy'] == False]
-        st.write(available_employees)
+        available_employees = filtered_shifts[filtered_shifts['busy'] == 'on-shift']
     
     # Check if any available employees are found
         if not available_employees.empty:
         # Mark the first available employee as busy
             employee_id = available_employees.iloc[0]['employee_id']
-            shifts_df.loc[shifts_df['employee_id'] == employee_id, 'busy'] = True
+            shifts_df.loc[shifts_df['employee_id'] == employee_id, 'busy'] = 'busy'
         else:
+            shifts_df.loc[shifts_df['employee_id'] == employee_id, 'busy'] = 'free'
             print(f"No available employee found for store {store_id} during shift {shift}")
 
 # Display the updated shifts DataFrame
     st.write(shifts_df)
-
  
  
 

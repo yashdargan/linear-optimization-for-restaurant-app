@@ -12,10 +12,12 @@ def preprocessing(df):
     #df['delivery_time'] = (df['actual_delivery_time'] - df['created_at']).dt.total_seconds() / 60
     #df['hour'] = (df['created_at'].dt.hour) + 1 
     #Find the earlist date
+    df 
     min_date = df['created_at'].min()
     df['day'] = (df['created_at'] - min_date).dt.days + 1
     df['shift'] = df['created_at'].apply(categorize_shift)
-    df_day100 = df[df['day']==100]
+
+    df_day100 = df[(df['day']==1) & (df['store_id']=='fe73f687e5bc5280214e0486b273a5f9')]
     st.write(df_day100)
     #df = df.drop(columns=['market_id','created_at','actual_delivery_time','store_primary_category','order_protocol','total_item','subtotal','num_distinct_items','min_item_price','max_item_price'])
     store_partner = df.groupby(['store_id','shift'])['total_onshift_partners'].max().reset_index()
