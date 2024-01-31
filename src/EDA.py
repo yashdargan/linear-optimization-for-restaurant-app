@@ -5,6 +5,10 @@ import streamlit as st
 
 from src.timestamp import categorize_shift
 
+def user_input_feature():
+    st.sidebar.title("Line Graph")
+    x_axis = st.sidebar.selectbox('X-axis',('Minute','Hour','Day','Shift'))
+    return x_axis
 
 def EDA(df):
     df["actual_delivery_time"] = pd.to_datetime(df["actual_delivery_time"])
@@ -14,24 +18,22 @@ def EDA(df):
     df["delivery_time"] = (
         df["actual_delivery_time"] - df["created_at"]
     ).dt.total_seconds() / 60
+    
+    #title
+    st.title('Exploratory Data Analysis')
+    #sidebar
+    feature = user_input_feature()
 
     # creating min,hour,day from created_at
-    df["min"] = (df["created_at"].dt.minute) + 1
-    df["hour"] = (df["created_at"].dt.hour) + 1
-    df["day"] = (df["created_at"].dt.dayofweek) + 1
-    df["shift"] = df["created_at"].apply(categorize_shift)
+    df[feature] = (
+    (df["created_at"].dt.minute) + 1 if feature == 'Minute' else
+    (df["created_at"].dt.hour) + 1 if feature == 'Hour' else
+    (df["created_at"].dt.dayofweek) + 1 if feature == 'Day' else
+    (df["created_at"].apply(categorize_shift)) if feature == 'Shift' else 
+    None
+    )
+    # graphs
+    graph_count = df[feature].value_counts().sort_index()
+    st.write(f"## {feature} Graph")
+    st.line_chart(graph_count)
 
-    # min basis graph
-    minute_count = df["min"].value_counts().sort_index()
-    st.title("Minute Count")
-    st.line_chart(minute_count)
-
-    # hour basis graph
-    hourly_count = df["hour"].value_counts().sort_index()
-    st.title("Hourly Count")
-    st.line_chart(hourly_count)
-
-    # daily basis graph
-    daily_count = df["day"].value_counts().sort_index()
-    st.title("Daily Count")
-    st.line_chart(daily_count)
