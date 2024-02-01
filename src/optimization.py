@@ -2,12 +2,17 @@ import pandas as pd
 import streamlit as st
 from ortools.sat.python import cp_model
 
-
-def optimization(df):
-    # Check if df is a dictionary
-    if not isinstance(df, pd.DataFrame):
-        st.write("Input is not a DataFrame")
+def optimization(data_dict):
+    # Check if data_dict is a dictionary
+    if not isinstance(data_dict, dict):
+        st.write("Input is not a dictionary")
         return
+
+    # Access individual components from data_dict
+    hourly_partner_df = data_dict["hourly_partner"]
+    data_df = data_dict["data"]
+    order_store_df = data_dict["order_store"]
+    total_days = data_dict["total_day"]
 
     # Initialize DataFrame for employee shifts
     shifts = pd.DataFrame(columns=["store_id", "shift", "employee_id", "busy"])
@@ -15,8 +20,8 @@ def optimization(df):
     # Create a CP model
     model = cp_model.CpModel()
 
-    # Assume df1 is the DataFrame containing the data
-    for index, row in df.iterrows():
+    # Optimization process
+    for index, row in data_df.iterrows():
         store_id = row["store_id"]
         shift = row["shift"]
 
@@ -56,4 +61,3 @@ def optimization(df):
         st.write("No Optimal Solution Found.")
 
     # Display the final shifts DataFrame
-    st.write(shifts)

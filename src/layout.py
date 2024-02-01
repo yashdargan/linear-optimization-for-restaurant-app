@@ -4,13 +4,15 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 from src.EDA import EDA
+from src.optimization import optimization
+from src.data_processing import preprocessing
 
 
 def layout(df):
     selected = option_menu(
         menu_title="Job Shop",
-        options=["Home", "Data view", "EDA"],
-        icons=["house", "database-fill", "graph-up"],
+        options=["Home", "Data view", "EDA","Result"],
+        icons=["house", "database-fill", "graph-up","journal"],
         menu_icon="cast",
         default_index=0,
         orientation="horizontal",
@@ -26,3 +28,7 @@ def layout(df):
 
     if selected == "EDA":
         EDA(df)
+    
+    if selected =="Result":
+        df = preprocessing(df)
+        optimization(df)
