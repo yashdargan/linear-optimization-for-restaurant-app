@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 from ortools.sat.python import cp_model
 
+
 def optimization(data_dict):
     # Check if data_dict is a dictionary
     if not isinstance(data_dict, dict):
