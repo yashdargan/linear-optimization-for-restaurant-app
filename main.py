@@ -2,12 +2,12 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 from src.data_loading import load_file
+from src.data_processing import preprocessing
 from src.layout import layout
 
 
 def main():
-    file_path = "Data/dataset.csv"
-    df = load_file(file_path)
+    df = preprocessing()
     layout(df)
 
 

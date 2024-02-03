@@ -1,13 +1,24 @@
-def categorize_shift(timestamp):
-    hour = timestamp.hour + 1
-    shifts = {
-        4: "Night-Morning Shift",
-        8: "Morning Shift",
-        12: "Noon Shift",
-        16: "Afternoon Shift",
-        20: "Evening Shift",
-        24: "Night Shift",
-    }
-    return shifts.get(
-        min(shifts.keys(), key=lambda x: abs(x - hour)), "Other Shift"
-    )
+from collections import defaultdict
+
+import streamlit as st
+
+
+def price_stamp(stamp):
+    prices = defaultdict(int)
+    range = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000]
+
+    stamp = sorted(stamp)
+
+    for price in stamp:
+        label = next(
+            (
+                f"{prev}-{curr}"
+                for prev, curr in zip([0] + range, range)
+                if prev <= price < curr
+            ),
+            f"{range[-1]}+",
+        )
+
+        prices[label] += 1
+
+    return prices

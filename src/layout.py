@@ -23,7 +23,7 @@ def layout(df):
         st.markdown(file, unsafe_allow_html=True)
 
     if selected == "Data view":
-        st.title("Portal delivery data")
+        st.title("Delivery data")
         st.write(df)
 
     if selected == "EDA":
