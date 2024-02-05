@@ -6,6 +6,7 @@ from streamlit_option_menu import option_menu
 from src.data_processing import preprocessing
 from src.EDA import EDA
 from src.optimization import optimization
+from src.location import visualization_map
 
 
 def layout(df):
@@ -30,5 +31,4 @@ def layout(df):
         EDA(df)
 
     if selected == "Result":
-        df = preprocessing(df)
-        optimization(df)
+        visualization_map(df)
