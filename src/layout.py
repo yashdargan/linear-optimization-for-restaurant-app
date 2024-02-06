@@ -5,8 +5,8 @@ from streamlit_option_menu import option_menu
 
 from src.data_processing import preprocessing
 from src.EDA import EDA
-from src.optimization import optimization
 from src.location import visualization_map
+from src.optimization import optimization
 
 
 def layout(df):
