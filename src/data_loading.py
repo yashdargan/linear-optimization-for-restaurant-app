@@ -5,7 +5,7 @@ def load_file(file):
     try:
         df = pd.read_csv(file)
         print("Data loaded Sucessfully")
-        return df
+        return df.head(250)
     except FileNotFoundError:
         print("File not Found. Please Check the file path")
         return None

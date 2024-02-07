@@ -31,4 +31,8 @@ def layout(df):
         EDA(df)
 
     if selected == "Result":
-        visualization_map(df)
+        st.sidebar.title("Select Location Type")
+        loc = st.sidebar.selectbox(
+            "Choose location type:", ["Mean", "Outer", "Random"]
+        )
+        visualization_map(df, loc)

@@ -22,3 +22,24 @@ def price_stamp(stamp):
         prices[label] += 1
 
     return prices
+
+
+def map_to_broader_category(category):
+    # Lowercase the category for case-insensitive matching
+    category = category.lower()
+
+    # Define keywords for each broader category
+    keywords = {
+        "South Indian": ["south"],
+        "North Indian": ["north"],
+        "Beverages": ["beverages", "drinks", "coffee", "tea"],
+    }
+
+    # Search for keywords in the category name
+    for broader_category, keyword_list in keywords.items():
+        for keyword in keyword_list:
+            if keyword in category:
+                return broader_category
+
+    # If no keyword is found, assign it to the "Others" category
+    return "Chinese"
