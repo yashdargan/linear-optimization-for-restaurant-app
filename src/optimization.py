@@ -1,64 +1,90 @@
+import math
+from ortools.constraint_solver import routing_enums_pb2
+from ortools.constraint_solver import pywrapcp
+import numpy as np 
+
 import pandas as pd
-import streamlit as st
-from ortools.sat.python import cp_model
+from src.location import visualization_map
 
 
-def optimization(data_dict):
-    # Check if data_dict is a dictionary
-    if not isinstance(data_dict, dict):
-        st.write("Input is not a dictionary")
-        return
+def haversine(lon1, lat1, lon2, lat2):
+    """
+    Calculate the great circle distance between two points
+    on the earth (specified in decimal degrees)
+    """
+    # Convert decimal degrees to radians
+    lon1, lat1, lon2, lat2 = map(math.radians, [lon1, lat1, lon2, lat2])
 
-    # Access individual components from data_dict
-    hourly_partner_df = data_dict["hourly_partner"]
-    data_df = data_dict["data"]
-    order_store_df = data_dict["order_store"]
-    total_days = data_dict["total_day"]
+    # Haversine formula
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+    a = (
+        math.sin(dlat / 2) ** 2
+        + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2) ** 2
+    )
+    c = 2 * math.asin(math.sqrt(a))
+    r = 6371  # Radius of earth in kilometers. Use 3956 for miles
+    return c * r
 
-    # Initialize DataFrame for employee shifts
-    shifts = pd.DataFrame(columns=["store_id", "shift", "employee_id", "busy"])
+def optimize_route(filtered_df, location_customer):
+    # Extracting restaurant locations from filtered_df
+    restaurant_locations = [(row['Latitude'], row['Longitude']) for index, row in filtered_df.iterrows()]
 
-    # Create a CP model
-    model = cp_model.CpModel()
+    # Extracting customer location from location_customer
+    customer_location = location_customer['Mean']
 
-    # Optimization process
-    for index, row in data_df.iterrows():
-        store_id = row["store_id"]
-        shift = row["shift"]
+    # Create the routing index manager.
+    manager = pywrapcp.RoutingIndexManager(len(restaurant_locations) + 1, 1, 0)
 
-        # Filter the shifts DataFrame for the current store_id and shift
-        filtered_shifts = shifts[
-            (shifts["store_id"] == store_id) & (shifts["shift"] == shift)
-        ]
+    # Create Routing Model.
+    routing = pywrapcp.RoutingModel(manager)
 
-        # Find available employees
-        available_employees = filtered_shifts[
-            filtered_shifts["busy"] == "on-shift"
-        ]
+    # Create distance callback.
+    def distance_callback(from_index, to_index):
+        from_node = manager.IndexToNode(from_index)
+        to_node = manager.IndexToNode(to_index)
+        if from_node == 0:  # The depot is at index 0
+            return 0
+        return distance_between_points(restaurant_locations[from_node - 1], restaurant_locations[to_node - 1])
 
-        # Check if any available employees are found
-        if not available_employees.empty:
-            # Mark the first available employee as busy
-            employee_id = available_employees.iloc[0]["employee_id"]
-            shifts.loc[shifts["employee_id"] == employee_id, "busy"] = "busy"
-        else:
-            # Handle case when no available employees are found
-            st.write(
-                f"No available employee found for store {store_id} during shift {shift}"
-            )
+    transit_callback_index = routing.RegisterTransitCallback(distance_callback)
 
-    # Objective: Minimize the number of unfilled shifts
-    unfilled_shifts = model.NewIntVar(0, 1000, "unfilled_shifts")
-    model.Add(unfilled_shifts == shifts[shifts["busy"] == "free"].shape[0])
+    # Define cost of each arc.
+    routing.SetArcCostEvaluatorOfAllVehicles(transit_callback_index)
 
-    # Create a solver and solve the model
-    solver = cp_model.CpSolver()
-    status = solver.Solve(model)
+    # Set 1 vehicle for the routing problem.
+    routing.AddDimension(transit_callback_index, 0, 3000, True, 'Distance')
 
-    if status == cp_model.OPTIMAL:
-        st.write("Optimal Solution Found!")
-        st.write(f"Number of Unfilled Shifts: {solver.Value(unfilled_shifts)}")
+    # Setting the customer location as the end location
+    customer_node = manager.NodeToIndex(0)
+
+    # Setting first node (customer location) as the start location
+    routing.SetDepotNodeIndex(0)
+
+    # Solve the problem.
+    search_parameters = pywrapcp.DefaultRoutingSearchParameters()
+    search_parameters.first_solution_strategy = (
+        routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC)
+
+    solution = routing.SolveWithParameters(search_parameters)
+
+    # Output optimal route
+    if solution:
+        route_indices = get_route_indices(solution, manager)
+        optimal_route = [restaurant_locations[i] for i in route_indices]
+        return optimal_route
     else:
-        st.write("No Optimal Solution Found.")
+        return None
 
-    # Display the final shifts DataFrame
+def distance_between_points(point1, point2):
+    # Calculate the Euclidean distance between two points
+    return np.sqrt((point1[0] - point2[0])**2 + (point1[1] - point2[1])**2)
+
+def get_route_indices(solution, manager):
+    # Get the indices of the optimal route
+    index = routing.Start(0)
+    route_indices = []
+    while not routing.IsEnd(index):
+        route_indices.append(manager.IndexToNode(index))
+        index = solution.Value(routing.NextVar(index))
+    return route_indices

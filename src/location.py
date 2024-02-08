@@ -91,3 +91,5 @@ def visualization_map(filtered_df, location):
 
     # Display the map
     folium_static(m)
+    
+    return filtered_df,location_customer

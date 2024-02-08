@@ -6,7 +6,7 @@ from streamlit_option_menu import option_menu
 from src.data_processing import preprocessing
 from src.EDA import EDA
 from src.location import visualization_map
-from src.optimization import optimization
+from src.optimization import optimize_route
 
 
 def layout(df):
@@ -35,4 +35,7 @@ def layout(df):
         loc = st.sidebar.selectbox(
             "Choose location type:", ["Mean", "Outer", "Random"]
         )
-        visualization_map(df, loc)
+        df,loc=visualization_map(df, loc)
+        if st.sidebar.button('Optimize Route'):
+            optimized_route=optimize_route(df,loc)
+            st.write("optimized route",optimize_route)
