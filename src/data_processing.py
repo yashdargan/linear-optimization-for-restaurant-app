@@ -1,7 +1,8 @@
-from src.data_loading import load_file
 import pandas as pd
-from src.timestamp import map_to_broader_category
+
+from src.data_loading import load_file
 from src.optimization import haversine
+from src.timestamp import map_to_broader_category
 
 
 def preprocessing():

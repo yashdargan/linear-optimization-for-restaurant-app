@@ -23,7 +23,7 @@ def fetch_nearby_restaurants(latitude, longitude):
     return data
 
 
-def visualization_map(filtered_df, location):
+def visualization_map(filtered_df, location, cat):
     st.title("Nearby Restaurants in Delhi NCR")
     mean_latitude = filtered_df["Latitude"].mean()
     mean_longitude = filtered_df["Longitude"].mean()
@@ -42,12 +42,6 @@ def visualization_map(filtered_df, location):
 
     # Create a Folium map centered around the mean latitude and longitude
     m = folium.Map(location=[mean_latitude, mean_longitude], zoom_start=15)
-
-    st.sidebar.title("Select Category")
-    cat = st.sidebar.selectbox(
-        "Choose the Category:",
-        ["All", "North Indian", "South Indian", "Beverages", "Chinese"],
-    )
 
     # Add markers for each restaurant location
     colors = {
@@ -75,6 +69,7 @@ def visualization_map(filtered_df, location):
 
     # Mark the selected location with a red marker
     latitude, longitude = location_customer.get(location, [None, None])
+
     if latitude is not None and longitude is not None:
         folium.Marker(
             location=[latitude, longitude],
@@ -89,7 +84,35 @@ def visualization_map(filtered_df, location):
     ]
     m.fit_bounds(bounds)
 
+    filtered_df["Longitude"] = filtered_df["Longitude"].astype(float)
+    filtered_df["Latitude"] = filtered_df["Latitude"].astype(float)
+
     # Display the map
     folium_static(m)
-    
-    return filtered_df,location_customer
+
+    return filtered_df, latitude, longitude
+
+
+def optimize_restaurant(filtered_df, latitude, longitude):
+    mean_lati = filtered_df["Latitude"].mean()
+    mean_long = filtered_df["Longitude"].mean()
+    m = folium.Map(location=[mean_lati, mean_long], zoom_start=15)
+    folium.Marker(
+        location=[mean_lati, mean_long],
+        popup="restrurant",
+        icon=folium.Icon(color="purple"),
+    ).add_to(m)
+
+    folium.Marker(
+        location=[latitude, longitude],
+        popup="customer",
+        icon=folium.Icon(color="Red"),
+    ).add_to(m)
+    bounds = [
+        [
+            filtered_df["Latitude"].min(),
+        ],
+        [filtered_df["Latitude"].max()],
+    ]
+    m.fit_bounds(bounds)
+    folium_static(m)

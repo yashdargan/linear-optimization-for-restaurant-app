@@ -5,8 +5,8 @@ from streamlit_option_menu import option_menu
 
 from src.data_processing import preprocessing
 from src.EDA import EDA
-from src.location import visualization_map
-from src.optimization import optimize_route
+from src.location import optimize_restaurant, visualization_map
+from src.optimization import find_nearest_restaurant
 
 
 def layout(df):
@@ -35,7 +35,14 @@ def layout(df):
         loc = st.sidebar.selectbox(
             "Choose location type:", ["Mean", "Outer", "Random"]
         )
-        df,loc=visualization_map(df, loc)
-        if st.sidebar.button('Optimize Route'):
-            optimized_route=optimize_route(df,loc)
-            st.write("optimized route",optimize_route)
+        st.sidebar.title("Select Category")
+        cat = st.sidebar.selectbox(
+            "Choose the Category:",
+            ["All", "North Indian", "South Indian", "Beverages", "Chinese"],
+        )
+
+        df, loc1, loc2 = visualization_map(df, loc, cat)
+        if st.sidebar.button("Optimize Route"):
+            nearest_restaurant = find_nearest_restaurant(df, loc1, loc2)
+            st.write(nearest_restaurant["Restaurant_Name"])
+            optimize_restaurant(nearest_restaurant, loc1, loc2)
