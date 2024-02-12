@@ -1,37 +1,70 @@
-# JobShop Optimization
+
+# Restaurant Finder App
 
 ## Overview
 
-This project focuses on the optimization of a logistics problem in a job shop setting. The primary goal is to improve the efficiency of resource allocation and scheduling within a job shop environment.
+This Streamlit web application helps users find nearby restaurants in Delhi NCR and optimize their selection based on their location.
 
-## Functions
+## Installation
 
-### Exploratory Data Analysis (EDA)
+1. Clone the repository:
 
-The EDA function provides insights into the dataset, highlighting specific patterns or observations that can inform the optimization process. One notable observation is the absence of shift partners during the noon shift (12 pm - 3 pm).
+    ```
+    git clone <repository_url>
+    ```
 
-#### Hourly and Minutely Analysis
+2. Install the required dependencies:
 
-The EDA includes hourly and minutely analysis, revealing trends and patterns in resource utilization and workflow dynamics.
-
-### Timestamp Function
-
-The timestamp function plays a crucial role in structuring the data by categorizing shifts based on the 'created_at' column. This categorization is essential for subsequent optimization steps.
+    ```
+    pip install -r requirements.txt
+    ```
 
 ## Usage
 
-To utilize the functionalities provided by this project, follow these steps:
+To run the Streamlit app, use the following command:
 
-1. Install the required dependencies:
 
-```bash
-pip install -r requirements.txt
-```
- ### Tasks to Do Next
+## Functions
 
-* Work on Employee Scheduling
-- Implement a scheduling mechanism to efficiently allocate employees to different shifts.
-- Consider factors such as employee availability, skill sets, and workload distribution.
-* Apply the Job Shop Model Based on Priority
-- Develop a job shop model that prioritizes tasks based on specific criteria.
-- Optimize the job shop model to maximize efficiency and minimize completion times.
+### `fetch_nearby_restaurants(latitude, longitude)`
+
+- Description: Fetches nearby restaurants using OpenStreetMap API.
+- Parameters:
+  - `latitude`: Latitude coordinate of the location.
+  - `longitude`: Longitude coordinate of the location.
+- Returns: JSON data containing nearby restaurants.
+
+### `visualization_map(filtered_df, location, cat)`
+
+- Description: Visualizes nearby restaurants on a Folium map.
+- Parameters:
+  - `filtered_df`: DataFrame containing restaurant data.
+  - `location`: Location to center the map (e.g., "Mean", "Random", "Outer").
+  - `cat`: Category of restaurants to display ("All", "North Indian", "South Indian", "Beverages", "Chinese").
+- Returns: Filtered DataFrame with latitude and longitude columns.
+
+### `optimize_restaurant(filtered_df, latitude, longitude)`
+
+- Description: Optimizes restaurant selection based on the customer's location.
+- Parameters:
+  - `filtered_df`: DataFrame containing restaurant data.
+  - `latitude`: Latitude coordinate of the customer's location.
+  - `longitude`: Longitude coordinate of the customer's location.
+- Returns: DataFrame with the optimized restaurant.
+
+### `main()`
+
+- Description: Main function to run the Streamlit app.
+- Usage: Run the Streamlit app using `streamlit run main.py`.
+
+## Contributing
+
+Contributions are welcome! If you have suggestions or improvements, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+"""
+    with open("README.md", "w") as readme_file:
+        readme_file.write(readme_content)
+

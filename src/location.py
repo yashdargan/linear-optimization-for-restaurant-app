@@ -100,7 +100,7 @@ def optimize_restaurant(filtered_df, latitude, longitude):
     folium.Marker(
         location=[mean_lati, mean_long],
         popup="restrurant",
-        icon=folium.Icon(color="purple"),
+        icon=folium.Icon(color="green"),
     ).add_to(m)
 
     folium.Marker(
