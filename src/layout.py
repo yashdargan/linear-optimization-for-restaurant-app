@@ -31,18 +31,15 @@ def layout(df):
         EDA(df)
 
     if selected == "Result":
-        st.sidebar.title("Select Location Type")
-        loc = st.sidebar.selectbox(
-            "Choose location type:", ["Mean", "Outer", "Random"]
-        )
-        st.sidebar.title("Select Category")
-        cat = st.sidebar.selectbox(
+        unique = df['Restaurant_Name']
+        st.sidebar.title("Select Restaurant")
+        restaurant = st.sidebar.selectbox(
             "Choose the Category:",
-            ["All", "North Indian", "South Indian", "Beverages", "Chinese"],
+            unique,
         )
 
-        df, loc1, loc2 = visualization_map(df, loc, cat)
-        if st.sidebar.button("Optimize Route"):
-            nearest_restaurant = find_nearest_restaurant(df, loc1, loc2)
-            st.write(nearest_restaurant["Restaurant_Name"])
-            optimize_restaurant(nearest_restaurant, loc1, loc2)
+        df = visualization_map(df, restaurant)
+        #if st.sidebar.button("Optimize Route"):
+            #nearest_restaurant = find_nearest_restaurant(df, loc1, loc2)
+            #st.write(nearest_restaurant["Restaurant_Name"])
+            #optimize_restaurant(nearest_restaurant, loc1, loc2)
