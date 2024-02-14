@@ -31,7 +31,7 @@ def layout(df):
         EDA(df)
 
     if selected == "Result":
-        unique = df['Restaurant_Name']
+        unique = df["Restaurant_Name"]
         st.sidebar.title("Select Restaurant")
         restaurant = st.sidebar.selectbox(
             "Choose the Category:",
@@ -39,7 +39,7 @@ def layout(df):
         )
 
         df = visualization_map(df, restaurant)
-        #if st.sidebar.button("Optimize Route"):
-            #nearest_restaurant = find_nearest_restaurant(df, loc1, loc2)
-            #st.write(nearest_restaurant["Restaurant_Name"])
-            #optimize_restaurant(nearest_restaurant, loc1, loc2)
+        # if st.sidebar.button("Optimize Route"):
+        # nearest_restaurant = find_nearest_restaurant(df, loc1, loc2)
+        # st.write(nearest_restaurant["Restaurant_Name"])
+        # optimize_restaurant(nearest_restaurant, loc1, loc2)
