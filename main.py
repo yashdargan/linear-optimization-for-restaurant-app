@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 from src.data_loading import load_file
-from src.data_processing import preprocessing
+from src.data_processing import order_preprocessing, preprocessing
 from src.layout import layout
 
 

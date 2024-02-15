@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 import streamlit as st
 
@@ -60,3 +61,57 @@ def preprocessing():
     )
 
     return filtered_df
+
+
+def order_preprocessing(df, customer):
+    df1 = []
+    for index, row in df.iterrows():
+        for _ in range(int(row["total_outstanding_orders"])):
+            order_protocol = np.random.randint(1, 11)
+            price = np.random.randint(100, 2001)
+            df1.append(
+                [
+                    row["Restaurant_Name"],
+                    row["Latitude"],
+                    row["Longitude"],
+                    order_protocol,
+                    price,
+                ]
+            )
+
+    orders_df = pd.DataFrame(
+        df1,
+        columns=[
+            "Restaurant_Name",
+            "R_Latitude",
+            "R_Longitude",
+            "order_protocol",
+            "price",
+        ],
+    )
+
+    # Reset indices for both DataFrames to ensure proper merging
+    orders_df.reset_index(inplace=True)
+    customer.reset_index(inplace=True)
+
+    # Merge the orders DataFrame with the customer DataFrame based on their indices
+    combine_df = pd.merge(
+        orders_df,
+        customer,
+        left_index=True,
+        right_index=True,
+        suffixes=("_o", "_c"),
+    )
+    combine_df.drop(columns=["index_c", "Restaurant_Name_c"], inplace=True)
+    combine_df["distance"] = combine_df.apply(
+        lambda row: haversine(
+            row["R_Longitude"],
+            row["R_Latitude"],
+            row["C_Longitude"],
+            row["C_Latitude"],
+        ),
+        axis=1,
+    )
+
+    # Display the merged DataFrame
+    return combine_df

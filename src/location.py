@@ -6,24 +6,6 @@ import streamlit as st
 from streamlit_folium import folium_static
 
 
-def fetch_nearby_restaurants(latitude, longitude):
-    # OpenStreetMap API endpoint for nearby places
-    endpoint = "https://nominatim.openstreetmap.org/reverse"
-    # Parameters for the API request
-    params = {
-        "format": "json",
-        "lat": latitude,
-        "lon": longitude,
-        "zoom": 18,
-        "addressdetails": 1,
-    }
-    # Send a GET request to the API endpoint
-    response = requests.get(endpoint, params=params)
-    # Parse the JSON response
-    data = response.json()
-    return data
-
-
 def visualization_map(filtered_df, restaurant):
     st.title("Nearby Restaurants in Delhi NCR")
 
@@ -56,10 +38,15 @@ def visualization_map(filtered_df, restaurant):
         for i in range(
             int(row["total_outstanding_orders"])
         ):  # Generate multiple locations for each order
+            restaurant1 = row["Restaurant_Name"]
             longitude = row["Longitude"] + np.random.uniform(-0.010, 0.010)
             latitude = row["Latitude"] + np.random.uniform(-0.010, 0.010)
             customer_rows.append(
-                {"C_Longitude": longitude, "C_Latitude": latitude}
+                {
+                    "Restaurant_Name": restaurant1,
+                    "C_Longitude": longitude,
+                    "C_Latitude": latitude,
+                }
             )
         customer_data = pd.concat(
             [customer_data, pd.DataFrame(customer_rows)], ignore_index=True
@@ -106,29 +93,4 @@ def visualization_map(filtered_df, restaurant):
         filtered_df[["total_outstanding_orders", "total_onshift_partners"]],
     )
 
-    return filtered_df
-
-
-def optimize_restaurant(filtered_df, latitude, longitude):
-    mean_lati = filtered_df["Latitude"].mean()
-    mean_long = filtered_df["Longitude"].mean()
-    m = folium.Map(location=[mean_lati, mean_long], zoom_start=15)
-    folium.Marker(
-        location=[mean_lati, mean_long],
-        popup="restrurant",
-        icon=folium.Icon(color="green"),
-    ).add_to(m)
-
-    folium.Marker(
-        location=[latitude, longitude],
-        popup="customer",
-        icon=folium.Icon(color="Red"),
-    ).add_to(m)
-    bounds = [
-        [
-            filtered_df["Latitude"].min(),
-        ],
-        [filtered_df["Latitude"].max()],
-    ]
-    m.fit_bounds(bounds)
-    folium_static(m)
+    return filtered_df, customer_data

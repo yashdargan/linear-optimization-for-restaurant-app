@@ -3,10 +3,10 @@ from pathlib import Path
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-from src.data_processing import preprocessing
+from src.data_processing import order_preprocessing
 from src.EDA import EDA
-from src.location import optimize_restaurant, visualization_map
-from src.optimization import find_nearest_restaurant
+from src.location import visualization_map
+from src.optimization import optimization
 
 
 def layout(df):
@@ -38,8 +38,7 @@ def layout(df):
             unique,
         )
 
-        df = visualization_map(df, restaurant)
-        # if st.sidebar.button("Optimize Route"):
-        # nearest_restaurant = find_nearest_restaurant(df, loc1, loc2)
-        # st.write(nearest_restaurant["Restaurant_Name"])
-        # optimize_restaurant(nearest_restaurant, loc1, loc2)
+        df, cust = visualization_map(df, restaurant)
+        order_df = order_preprocessing(df, cust)
+        if st.sidebar.button("Optimize Route"):
+            optimization(df, order_df)
