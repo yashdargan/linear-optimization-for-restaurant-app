@@ -6,11 +6,14 @@ import streamlit as st
 from streamlit_folium import folium_static
 
 
+@st.cache_data()
 def visualization_map(filtered_df, restaurant):
     st.title("Nearby Restaurants in Delhi NCR")
 
     # Mean latitude and longitude of restaurants
+    global mean_latitude_restaurant
     mean_latitude_restaurant = filtered_df["Latitude"].mean()
+    global mean_longitude_restaurant
     mean_longitude_restaurant = filtered_df["Longitude"].mean()
 
     # Create a Folium map centered around the mean latitude and longitude of restaurants
@@ -61,6 +64,7 @@ def visualization_map(filtered_df, restaurant):
         ).add_to(m)
 
     # Fit the map bounds to the markers
+    global bounds
     bounds = [
         [
             min(
@@ -94,3 +98,30 @@ def visualization_map(filtered_df, restaurant):
     )
 
     return filtered_df, customer_data
+
+
+def selected_map(selected_orders):
+    map_center = [mean_latitude_restaurant, mean_longitude_restaurant]
+    m = folium.Map(
+        location=map_center,
+        zoom_start=15,
+    )
+
+    # restaurant marker
+    folium.Marker(
+        location=[
+            selected_orders["R_Latitude"].iloc[0],
+            selected_orders["R_Longitude"].iloc[0],
+        ],
+        popup="Restaurant_Name",
+        icon=folium.Icon(color="red"),
+    ).add_to(m)
+    # customer Marker
+    for _, row in selected_orders.iterrows():
+        folium.Marker(
+            location=[row["C_Latitude"], row["C_Longitude"]],
+            popup="Customers",
+            icon=folium.Icon(color="purple"),
+        ).add_to(m)
+    m.fit_bounds(bounds)
+    folium_static(m)

@@ -5,11 +5,12 @@ from streamlit_option_menu import option_menu
 
 from src.data_processing import order_preprocessing
 from src.EDA import EDA
-from src.location import visualization_map
+from src.location import selected_map, visualization_map
 from src.optimization import optimization
 
 
 def layout(df):
+    unique = df["Restaurant_Name"].unique()
     selected = option_menu(
         menu_title="Job Shop",
         options=["Home", "Data view", "EDA", "Result"],
@@ -31,7 +32,8 @@ def layout(df):
         EDA(df)
 
     if selected == "Result":
-        unique = df["Restaurant_Name"]
+        st.title("Nearby Restaurants in Delhi NCR")
+        st.write("Outstanding_delivery")
         st.sidebar.title("Select Restaurant")
         restaurant = st.sidebar.selectbox(
             "Choose the Category:",
@@ -41,4 +43,5 @@ def layout(df):
         df, cust = visualization_map(df, restaurant)
         order_df = order_preprocessing(df, cust)
         if st.sidebar.button("Optimize Route"):
-            optimization(df, order_df)
+            selected_order = optimization(df, order_df)
+            selected_map(selected_order)
