@@ -61,10 +61,3 @@ To run the Streamlit app, use the following command:
 
 Contributions are welcome! If you have suggestions or improvements, please open an issue or submit a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-"""
-    with open("README.md", "w") as readme_file:
-        readme_file.write(readme_content)
-
