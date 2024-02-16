@@ -25,7 +25,9 @@ def preprocessing():
 
     file_path = "Data/dataset.csv"
     df1 = load_file(file_path)
-    rf1 = df1[df1["total_outstanding_orders"] > df1["total_onshift_partners"]]
+    rf1 = df1[
+        df1["total_outstanding_orders"] > df1["total_onshift_partners"]
+    ]
     df.reset_index(inplace=True)
     rf1.reset_index(inplace=True)
 

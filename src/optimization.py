@@ -36,7 +36,9 @@ def optimization(df, order_df):
 
     solver = pywraplp.Solver.CreateSolver("SCIP")
 
-    x = [solver.IntVar(0, 1, "x[{}]".format(i)) for i in range(len(order_df))]
+    x = [
+        solver.IntVar(0, 1, "x[{}]".format(i)) for i in range(len(order_df))
+    ]
 
     total_delivery_partners = df["total_onshift_partners"].sum()
 

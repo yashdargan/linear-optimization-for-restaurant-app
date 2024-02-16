@@ -23,7 +23,9 @@ def visualization_map(filtered_df, restaurant):
     )
 
     if restaurant is not None:
-        filtered_df = filtered_df[filtered_df["Restaurant_Name"] == restaurant]
+        filtered_df = filtered_df[
+            filtered_df["Restaurant_Name"] == restaurant
+        ]
 
     # Mark restaurants on the map with red
     for _, row in filtered_df.iterrows():
