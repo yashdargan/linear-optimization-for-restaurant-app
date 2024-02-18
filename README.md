@@ -80,3 +80,8 @@ This Python script provides functionalities for optimizing delivery routes based
 
 Contributions are welcome! If you have suggestions or improvements, please open an issue or submit a pull request.
 
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
