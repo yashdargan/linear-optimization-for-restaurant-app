@@ -1,5 +1,6 @@
+# Delivery Route Optimization
 
-# Restaurant Finder App
+This Python script provides functionalities for optimizing delivery routes based on various factors such as protocol, distance, and price. It leverages mathematical calculations and linear optimization techniques to achieve efficient route planning.
 
 ## Overview
 
@@ -37,9 +38,6 @@ To run the Streamlit app, use the following command:
   - `cat`: Category of restaurants to display ("All", "North Indian", "South Indian", "Beverages", "Chinese").
 - Returns: Filtered DataFrame with latitude and longitude columns.
 
-# Delivery Route Optimization
-
-This Python script provides functionalities for optimizing delivery routes based on various factors such as protocol, distance, and price. It leverages mathematical calculations and linear optimization techniques to achieve efficient route planning.
 
 ## Features
 
