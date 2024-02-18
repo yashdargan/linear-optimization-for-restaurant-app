@@ -1,0 +1,879 @@
+[
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "UseExceptions",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal2xyz",
+        "description": "osgeo_utils.gdal2xyz",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal2xyz",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal2xyz",
+        "description": "osgeo_utils.gdal2xyz",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal2xyz",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_calc",
+        "description": "osgeo_utils.gdal_calc",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_calc",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_calc",
+        "description": "osgeo_utils.gdal_calc",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_calc",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_edit",
+        "description": "osgeo_utils.gdal_edit",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_edit",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_edit",
+        "description": "osgeo_utils.gdal_edit",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_edit",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_fillnodata",
+        "description": "osgeo_utils.gdal_fillnodata",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_fillnodata",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_fillnodata",
+        "description": "osgeo_utils.gdal_fillnodata",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_fillnodata",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_merge",
+        "description": "osgeo_utils.gdal_merge",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_merge",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_merge",
+        "description": "osgeo_utils.gdal_merge",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_merge",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_pansharpen",
+        "description": "osgeo_utils.gdal_pansharpen",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_pansharpen",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_pansharpen",
+        "description": "osgeo_utils.gdal_pansharpen",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_pansharpen",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_polygonize",
+        "description": "osgeo_utils.gdal_polygonize",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_polygonize",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_polygonize",
+        "description": "osgeo_utils.gdal_polygonize",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_polygonize",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_proximity",
+        "description": "osgeo_utils.gdal_proximity",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_proximity",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_proximity",
+        "description": "osgeo_utils.gdal_proximity",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_proximity",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_retile",
+        "description": "osgeo_utils.gdal_retile",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_retile",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_retile",
+        "description": "osgeo_utils.gdal_retile",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_retile",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_sieve",
+        "description": "osgeo_utils.gdal_sieve",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_sieve",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_sieve",
+        "description": "osgeo_utils.gdal_sieve",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_sieve",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdalattachpct",
+        "description": "osgeo_utils.gdalattachpct",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdalattachpct",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdalattachpct",
+        "description": "osgeo_utils.gdalattachpct",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdalattachpct",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdalcompare",
+        "description": "osgeo_utils.gdalcompare",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdalcompare",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdalcompare",
+        "description": "osgeo_utils.gdalcompare",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdalcompare",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdalmove",
+        "description": "osgeo_utils.gdalmove",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdalmove",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdalmove",
+        "description": "osgeo_utils.gdalmove",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdalmove",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.ogr_layer_algebra",
+        "description": "osgeo_utils.ogr_layer_algebra",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.ogr_layer_algebra",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.ogr_layer_algebra",
+        "description": "osgeo_utils.ogr_layer_algebra",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.ogr_layer_algebra",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.ogrmerge",
+        "description": "osgeo_utils.ogrmerge",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.ogrmerge",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.ogrmerge",
+        "description": "osgeo_utils.ogrmerge",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.ogrmerge",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.pct2rgb",
+        "description": "osgeo_utils.pct2rgb",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.pct2rgb",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.pct2rgb",
+        "description": "osgeo_utils.pct2rgb",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.pct2rgb",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.rgb2pct",
+        "description": "osgeo_utils.rgb2pct",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.rgb2pct",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.rgb2pct",
+        "description": "osgeo_utils.rgb2pct",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.rgb2pct",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "seaborn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "seaborn",
+        "description": "seaborn",
+        "detail": "seaborn",
+        "documentation": {}
+    },
+    {
+        "label": "streamlit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
+        "documentation": {}
+    },
+    {
+        "label": "price_stamp",
+        "importPath": "src.timestamp",
+        "description": "src.timestamp",
+        "isExtraImport": true,
+        "detail": "src.timestamp",
+        "documentation": {}
+    },
+    {
+        "label": "map_to_broader_category",
+        "importPath": "src.timestamp",
+        "description": "src.timestamp",
+        "isExtraImport": true,
+        "detail": "src.timestamp",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "load_file",
+        "importPath": "src.data_loading",
+        "description": "src.data_loading",
+        "isExtraImport": true,
+        "detail": "src.data_loading",
+        "documentation": {}
+    },
+    {
+        "label": "load_file",
+        "importPath": "src.data_loading",
+        "description": "src.data_loading",
+        "isExtraImport": true,
+        "detail": "src.data_loading",
+        "documentation": {}
+    },
+    {
+        "label": "haversine",
+        "importPath": "src.optimization",
+        "description": "src.optimization",
+        "isExtraImport": true,
+        "detail": "src.optimization",
+        "documentation": {}
+    },
+    {
+        "label": "optimization",
+        "importPath": "src.optimization",
+        "description": "src.optimization",
+        "isExtraImport": true,
+        "detail": "src.optimization",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "option_menu",
+        "importPath": "streamlit_option_menu",
+        "description": "streamlit_option_menu",
+        "isExtraImport": true,
+        "detail": "streamlit_option_menu",
+        "documentation": {}
+    },
+    {
+        "label": "order_preprocessing",
+        "importPath": "src.data_processing",
+        "description": "src.data_processing",
+        "isExtraImport": true,
+        "detail": "src.data_processing",
+        "documentation": {}
+    },
+    {
+        "label": "order_preprocessing",
+        "importPath": "src.data_processing",
+        "description": "src.data_processing",
+        "isExtraImport": true,
+        "detail": "src.data_processing",
+        "documentation": {}
+    },
+    {
+        "label": "preprocessing",
+        "importPath": "src.data_processing",
+        "description": "src.data_processing",
+        "isExtraImport": true,
+        "detail": "src.data_processing",
+        "documentation": {}
+    },
+    {
+        "label": "EDA",
+        "importPath": "src.EDA",
+        "description": "src.EDA",
+        "isExtraImport": true,
+        "detail": "src.EDA",
+        "documentation": {}
+    },
+    {
+        "label": "selected_map",
+        "importPath": "src.location",
+        "description": "src.location",
+        "isExtraImport": true,
+        "detail": "src.location",
+        "documentation": {}
+    },
+    {
+        "label": "visualization_map",
+        "importPath": "src.location",
+        "description": "src.location",
+        "isExtraImport": true,
+        "detail": "src.location",
+        "documentation": {}
+    },
+    {
+        "label": "folium",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "folium",
+        "description": "folium",
+        "detail": "folium",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "folium_static",
+        "importPath": "streamlit_folium",
+        "description": "streamlit_folium",
+        "isExtraImport": true,
+        "detail": "streamlit_folium",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "pywraplp",
+        "importPath": "ortools.linear_solver",
+        "description": "ortools.linear_solver",
+        "isExtraImport": true,
+        "detail": "ortools.linear_solver",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "layout",
+        "importPath": "src.layout",
+        "description": "src.layout",
+        "isExtraImport": true,
+        "detail": "src.layout",
+        "documentation": {}
+    },
+    {
+        "label": "EDA",
+        "kind": 2,
+        "importPath": "src.EDA",
+        "description": "src.EDA",
+        "peekOfCode": "def EDA(df):\n    cost_per_rest = price_stamp(df[\"Pricing_for_2\"])\n    st.title(\"No. of Restaurants in each price Catergory\")\n    st.bar_chart(cost_per_rest)",
+        "detail": "src.EDA",
+        "documentation": {}
+    },
+    {
+        "label": "load_file",
+        "kind": 2,
+        "importPath": "src.data_loading",
+        "description": "src.data_loading",
+        "peekOfCode": "def load_file(file):\n    try:\n        df = pd.read_csv(file)\n        print(\"Data loaded Sucessfully\")\n        return df.head(250)\n    except FileNotFoundError:\n        print(\"File not Found. Please Check the file path\")\n        return None\n    except pd.errors.EmptyDataError:\n        print(\"file is empty\")",
+        "detail": "src.data_loading",
+        "documentation": {}
+    },
+    {
+        "label": "preprocessing",
+        "kind": 2,
+        "importPath": "src.data_processing",
+        "description": "src.data_processing",
+        "peekOfCode": "def preprocessing():\n    file_path = \"Data/DelhiNCR Restaurants.csv\"\n    df = load_file(file_path)\n    df.drop(\n        columns=[\n            \"Dining_Rating\",\n            \"Dining_Review_Count\",\n            \"Dining_Review_Count\",\n            \"Delivery_Rating_Count\",\n            \"Known_For2\",",
+        "detail": "src.data_processing",
+        "documentation": {}
+    },
+    {
+        "label": "order_preprocessing",
+        "kind": 2,
+        "importPath": "src.data_processing",
+        "description": "src.data_processing",
+        "peekOfCode": "def order_preprocessing(df, customer):\n    df1 = []\n    for index, row in df.iterrows():\n        for _ in range(int(row[\"total_outstanding_orders\"])):\n            order_protocol = np.random.randint(1, 11)\n            price = np.random.randint(100, 2001)\n            df1.append(\n                [\n                    row[\"Restaurant_Name\"],\n                    row[\"Latitude\"],",
+        "detail": "src.data_processing",
+        "documentation": {}
+    },
+    {
+        "label": "layout",
+        "kind": 2,
+        "importPath": "src.layout",
+        "description": "src.layout",
+        "peekOfCode": "def layout(df):\n    unique = df[\"Restaurant_Name\"].unique()\n    selected = option_menu(\n        menu_title=\"Job Shop\",\n        options=[\"Home\", \"Data view\", \"EDA\", \"Result\"],\n        icons=[\"house\", \"database-fill\", \"graph-up\", \"journal\"],\n        menu_icon=\"cast\",\n        default_index=0,\n        orientation=\"horizontal\",\n    )",
+        "detail": "src.layout",
+        "documentation": {}
+    },
+    {
+        "label": "visualization_map",
+        "kind": 2,
+        "importPath": "src.location",
+        "description": "src.location",
+        "peekOfCode": "def visualization_map(filtered_df, restaurant):\n    st.title(\"Nearby Restaurants in Delhi NCR\")\n    # Mean latitude and longitude of restaurants\n    global mean_latitude_restaurant\n    mean_latitude_restaurant = filtered_df[\"Latitude\"].mean()\n    global mean_longitude_restaurant\n    mean_longitude_restaurant = filtered_df[\"Longitude\"].mean()\n    # Create a Folium map centered around the mean latitude and longitude of restaurants\n    m = folium.Map(\n        location=[mean_latitude_restaurant, mean_longitude_restaurant],",
+        "detail": "src.location",
+        "documentation": {}
+    },
+    {
+        "label": "selected_map",
+        "kind": 2,
+        "importPath": "src.location",
+        "description": "src.location",
+        "peekOfCode": "def selected_map(selected_orders):\n    map_center = [mean_latitude_restaurant, mean_longitude_restaurant]\n    m = folium.Map(\n        location=map_center,\n        zoom_start=15,\n    )\n    # restaurant marker\n    folium.Marker(\n        location=[\n            selected_orders[\"R_Latitude\"].iloc[0],",
+        "detail": "src.location",
+        "documentation": {}
+    },
+    {
+        "label": "haversine",
+        "kind": 2,
+        "importPath": "src.optimization",
+        "description": "src.optimization",
+        "peekOfCode": "def haversine(lon1, lat1, lon2, lat2):\n    \"\"\"\n    Calculate the great circle distance between two points\n    on the earth (specified in decimal degrees)\n    \"\"\"\n    # Convert decimal degrees to radians\n    lon1, lat1, lon2, lat2 = map(math.radians, [lon1, lat1, lon2, lat2])\n    # Haversine formula\n    dlon = lon2 - lon1\n    dlat = lat2 - lat1",
+        "detail": "src.optimization",
+        "documentation": {}
+    },
+    {
+        "label": "optimization",
+        "kind": 2,
+        "importPath": "src.optimization",
+        "description": "src.optimization",
+        "peekOfCode": "def optimization(df, order_df):\n    st.write(\"total_orders\")\n    st.write(order_df)\n    # Assign weights\n    weight_protocol = 0.4\n    weight_distance = 0.3\n    weight_price = 0.3\n    solver = pywraplp.Solver.CreateSolver(\"SCIP\")\n    x = [\n        solver.IntVar(0, 1, \"x[{}]\".format(i)) for i in range(len(order_df))",
+        "detail": "src.optimization",
+        "documentation": {}
+    },
+    {
+        "label": "price_stamp",
+        "kind": 2,
+        "importPath": "src.timestamp",
+        "description": "src.timestamp",
+        "peekOfCode": "def price_stamp(stamp):\n    prices = defaultdict(int)\n    range = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000]\n    stamp = sorted(stamp)\n    for price in stamp:\n        label = next(\n            (\n                f\"{prev}-{curr}\"\n                for prev, curr in zip([0] + range, range)\n                if prev <= price < curr",
+        "detail": "src.timestamp",
+        "documentation": {}
+    },
+    {
+        "label": "map_to_broader_category",
+        "kind": 2,
+        "importPath": "src.timestamp",
+        "description": "src.timestamp",
+        "peekOfCode": "def map_to_broader_category(category):\n    # Lowercase the category for case-insensitive matching\n    category = category.lower()\n    # Define keywords for each broader category\n    keywords = {\n        \"South Indian\": [\"south\"],\n        \"North Indian\": [\"north\"],\n        \"Beverages\": [\"beverages\", \"drinks\", \"coffee\", \"tea\"],\n    }\n    # Search for keywords in the category name",
+        "detail": "src.timestamp",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    df = preprocessing()\n    layout(df)\nif __name__ == \"__main__\":\n    main()",
+        "detail": "main",
+        "documentation": {}
+    }
+]
